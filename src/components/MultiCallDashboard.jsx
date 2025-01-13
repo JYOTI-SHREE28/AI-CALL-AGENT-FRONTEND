@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Mic, Play, Square, Plus, X } from 'lucide-react';
-import Sidebar from './Sidebar'; // Import the Sidebar component
+import Sidebar from './sidebar'; // Import the Sidebar component
 import { Card, CardContent, CardHeader, CardTitle } from './card';
 import { Button } from './button';
 import socket from '../socket';
