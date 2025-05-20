@@ -1,10 +1,13 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 import 'regenerator-runtime/runtime';
-import './index.css';
+import './index.css'; // Correct CSS import
 import App from './App.jsx';
+import posthog from 'posthog-js';
+import { PostHogProvider } from 'posthog-js/react';
 
-import { PostHogProvider } from 'posthog-js/react'
+// Optional: Enable debug logs in development
+posthog.debug = import.meta.env.MODE === 'development';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -17,5 +20,5 @@ createRoot(document.getElementById('root')).render(
     >
       <App />
     </PostHogProvider>
-  </StrictMode>,
-)
+  </StrictMode>
+);
